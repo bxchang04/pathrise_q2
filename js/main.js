@@ -28,26 +28,22 @@ To-dos:
 
 */
 
-      // list.innerHTML += '<li>' + '<button>' + item.value + '</button>' + '</li>';
-
 // For adding entries
 (function(){
 
   var list = document.querySelector('#list'),
       form = document.querySelector('form'),
-      item = document.querySelector('#plus');
-      item2 = document.querySelector('#plus'); // refactor this
+      item = document.querySelector('#companyName');
+      item2 = document.querySelector('#jobTitle'); // refactor this
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
     // refactor to use modal as input
-    item.value = "";
-    item2.value = "";
+    item.value = document.getElementById('companyName').value;
+    item2.value = document.getElementById('jobTitle').value;
     list.innerHTML += `<li>
     <entry> <div>${item.value} </div><div> ${item2.value}</div></entry>
     </li>`;
-    item.value = "company";
-    item2.value = "job";
     store();
   },false)
 
@@ -82,6 +78,7 @@ To-dos:
 
 
 // For modal
+let modalShown = false;
 var isDialogSupported = true;
 if (!window.HTMLDialogElement) {
   document.body.classList.add("no-dialog");
@@ -89,11 +86,16 @@ if (!window.HTMLDialogElement) {
 }
 
 plus.onclick = () => {
-  if (isDialogSupported) {
+  if (isDialogSupported && !modalShown) {
     modal.showModal();
+    modalShown = true;
   } else {
     modal.setAttribute("open", "");
   }
   //   Focus first input when dialog opens
   modal.querySelector("input").focus();
 };
+
+addBtn.onclick = () => {
+  modal.removeAttribute("open");
+}
