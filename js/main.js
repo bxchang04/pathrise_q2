@@ -17,7 +17,18 @@ bonus - pop up modal with 'Add a job', 2 fields, and Continue button
   bonus - on hover, trash button appears on top right. Fade in.
   bonus - on mouseOver, trash button turns white
   bonus - on click, modal appears with 'Delete Job', 'Are you sure you want to delete this job?'', and Delete and Cancel buttons (cancel is semi-transparent)
-  */
+
+
+
+To-dos:
+1. + onClick make modal pop up
+  a. Add 2 input fields - Company Name and Job title
+  Styling - add icons, and nactive
+  b. Continue button
+
+2. Continue onClick, add button and
+
+*/
 
       // list.innerHTML += '<li>' + '<button>' + item.value + '</button>' + '</li>';
 
@@ -29,7 +40,7 @@ bonus - pop up modal with 'Add a job', 2 fields, and Continue button
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    list.innerHTML += '<li>' + '<button>' + item.value + '</button>' + '</li>';
+    list.innerHTML += '<li>' + '<job>' + item.value + '</job>' + '</li>';
     store();
     item.value = "";
   },false)
@@ -51,7 +62,7 @@ bonus - pop up modal with 'Add a job', 2 fields, and Continue button
   function getValues() {
     var storedValues = window.localStorage.myitems;
     if(!storedValues) {
-      list.innerHTML = '<li><button>Placeholder</button></li>';
+      list.innerHTML = '<li><job>Placeholder</job></li>';
     }
     else {
       list.innerHTML = storedValues;
