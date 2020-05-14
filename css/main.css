@@ -9,7 +9,8 @@ body {
   max-width: 600px;
   width: 100%;
   display: table;
-  margin: 0 auto;
+  padding: 2%;
+  margin-left: 0 auto;
   margin-top: 40px;
   border: 1px solid #cfcbcc;
 }
@@ -61,26 +62,28 @@ ul {
 }
 li {
   padding: 0.5%
+  width: 20%;
+  padding:.5%;
+
 }
 button {
     display: inline-block;
     flex: 1 1 25px;
-    width: 30%;
+    width: 35.75%;
     height: 10%;
-    padding:1%;
-    padding-botton:50%
     font-size: 16px;
     background-color: rgba(219, 217, 217, 0.719);
     border-radius: 5px;
 }
 
-job {
+entry {
+    font-size: 16px;
     display: inline-block;
     flex: 1 1 25px;
-    width: 20%;
+    width: 25%;
     height: 5%;
     padding:5%;
-    font-size: 16px;
+    font-size: 14px;
     background-color: rgba(219, 217, 217, 0.719);
     border-radius: 5px;
 }

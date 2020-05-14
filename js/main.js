@@ -37,12 +37,19 @@ To-dos:
   var list = document.querySelector('#list'),
       form = document.querySelector('form'),
       item = document.querySelector('#item');
+      item2 = document.querySelector('#item'); // refactor this
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    list.innerHTML += '<li>' + '<job>' + item.value + '</job>' + '</li>';
-    store();
+    // refactor to use modal as input
     item.value = "";
+    item2.value = "";
+    list.innerHTML += `<li>
+    <entry> <div>${item.value} </div><div> ${item2.value}</div></entry>
+    </li>`;
+    item.value = "company";
+    item2.value = "job";
+    store();
   },false)
 
   list.addEventListener('click',function(e){
@@ -62,7 +69,10 @@ To-dos:
   function getValues() {
     var storedValues = window.localStorage.myitems;
     if(!storedValues) {
-      list.innerHTML = '<li><job>Placeholder</job></li>';
+      list.innerHTML = `<li><entry><div>Pathrise</div><div>Software Engineer</div></entry></li>
+      <li><entry><div>Google</div><div>Software Engineer</div></entry></li>
+      <li><entry><div>Facebook</div><div>Software Engineer</div></entry></li>
+      <li><entry><div>Airbnb</div><div>Software Engineer</div></entry></li>`;
     }
     else {
       list.innerHTML = storedValues;
