@@ -11,26 +11,38 @@
   </head>
   <body>
 
-
-    <!-- <ul class="button add" onClick()>
-      <li>
-        <button>+</button>
-      </li>
-      <li>
-        <button>Company/Job #1</button>
-      </li>
-    </ul>-->
-
-
-
     <div class="container">
+
       <form action="#">
         <span>| wand icon | </span><span>Wishlist</span>
         <p> x jobs </p>
-        <button type="text" name="item" id="item" placeholder="Add New">+</button>
+        <button type="text" name="plus" id="plus" class="show-dialog" placeholder="Add New">+</button>
+
+        <dialog id="modal">
+          <div class="inputArea">
+            <form action="" class=form>
+              <label>
+                <p>
+                  Add a job
+                </p>
+              </label>
+              <label>
+                <input type="text" /> Company Name
+              </label>
+              <label>
+                <input type="password" /> Job Title
+              </label>
+              <br></br>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </dialog>
         <ul id="list"></ul>
       </form>
+
+      <div id='modal-container'></div>
     </div>
+
 
     <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
