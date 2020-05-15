@@ -41,16 +41,15 @@ To-dos:
     // refactor to use modal as input
     item.value = document.getElementById('companyName').value;
     item2.value = document.getElementById('jobTitle').value;
-    list.innerHTML += `<li>
-    <entry> <div>${item.value} </div><div> ${item2.value}</div></entry>
-    </li>`;
+    list.innerHTML +=
+    `<li><entry><div class="row1">${item.value}</div><div class="xBtn row1"> x </div><div>${item2.value}</div></entry></li>`;
     store();
   },false)
 
   list.addEventListener('click',function(e){
     var t = e.target;
-    if(t.classList.contains('checked')){
-      t.parentNode.removeChild(t);
+    if(t.classList.contains('xBtn')){
+      t.parentNode.parentNode.removeChild(t.parentNode);
     } else {
       t.classList.add('checked');
     }
@@ -64,10 +63,10 @@ To-dos:
   function getValues() {
     var storedValues = window.localStorage.myitems;
     if(!storedValues) {
-      list.innerHTML = `<li><entry><div>Pathrise</div><div>Software Engineer</div></entry></li>
-      <li><entry><div>Google</div><div>Software Engineer</div></entry></li>
-      <li><entry><div>Facebook</div><div>Software Engineer</div></entry></li>
-      <li><entry><div>Airbnb</div><div>Software Engineer</div></entry></li>`;
+      list.innerHTML = `<li><entry><div class="row1">Pathrise</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>
+      <li><entry><div class="row1">Google</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>
+      <li><entry><div class="row1">Facebook</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>
+      <li><entry><div class="row1">Airbnb</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>`;
     }
     else {
       list.innerHTML = storedValues;

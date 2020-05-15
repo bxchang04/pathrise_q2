@@ -2,7 +2,6 @@ body {
   background: #eee;
   color: #444;
   font-family: 'Helvetica', arial, sans-serif;
-  font-size: 12px;
 }
 
 .container {
@@ -27,7 +26,8 @@ input {
 }
 
 h1,h2 {
-  text-align: center;
+  text-align: left;
+  font-size: 20px;
   margin-bottom: 0px;
   line-height: 1;
 }
@@ -60,11 +60,20 @@ li {
   }
 }
 
+.xBtn {
+  list-style-position: inside;
+  text-align: right;
+}
+
+.row1 {
+  font-size: 18px;
+}
 addButton {
     display: inline-block;
-    flex: 1 1 25px;
-    width: 35%;
+    flex: 1 1;
+    width: 40%;
     height: 10%;
+    padding: 1%;
     font-size: 16px;
     background-color: rgba(219, 217, 217, 0.719);
     border-radius: 5px;
@@ -73,14 +82,16 @@ addButton {
 
 entry {
     font-size: 16px;
-    display: inline-block;
-    flex: 1 1 25px;
-    width: 35%;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 50% 50%;
+    width: 40%;
     height: 5%;
     padding:5%;
     font-size: 14px;
     background-color: gray;
     border-radius: 5px;
+    columns: 2;
 }
 
 button {
@@ -101,7 +112,7 @@ dialog {
   left: 0;
   top: 10%;
   height: auto;
-  width: 30%;
+  width: 20%;
   overflow: auto;
   border-radius: 5px;
   text-align: center;
