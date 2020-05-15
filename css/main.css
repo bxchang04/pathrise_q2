@@ -60,6 +60,12 @@ li {
   }
 }
 
+.logo {
+  border-radius: 50%;
+  width: 60%;
+  text-align: center;
+}
+
 .xBtn {
   list-style-position: inside;
   text-align: right;
@@ -71,7 +77,7 @@ li {
 addButton {
     display: inline-block;
     flex: 1 1;
-    width: 40%;
+    width: 60%;
     height: 10%;
     padding: 1%;
     font-size: 16px;
@@ -83,15 +89,16 @@ addButton {
 entry {
     font-size: 16px;
     display: grid;
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 30% 50% 20%;
     grid-template-rows: 50% 50%;
-    width: 40%;
+    width: 60%;
     height: 5%;
     padding:5%;
     font-size: 14px;
     background-color: gray;
     border-radius: 5px;
     columns: 2;
+    user-select: none;
 }
 
 button {
@@ -125,4 +132,8 @@ dialog {
 
 .no-dialog dialog[open] {
   display: block;
+}
+
+footer {
+  text-align: center;
 }

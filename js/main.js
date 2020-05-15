@@ -42,7 +42,7 @@ To-dos:
     item.value = document.getElementById('companyName').value;
     item2.value = document.getElementById('jobTitle').value;
     list.innerHTML +=
-    `<li><entry><div class="row1">${item.value}</div><div class="xBtn row1"> x </div><div>${item2.value}</div></entry></li>`;
+    `<li><entry><img src="https://logo.clearbit.com/${item.value}.com" class=logo><div class="row1">${item.value}</div><div class="xBtn row1"> x </div><div></div><div>${item2.value}</div></entry></li>`;
     store();
   },false)
 
@@ -63,10 +63,10 @@ To-dos:
   function getValues() {
     var storedValues = window.localStorage.myitems;
     if(!storedValues) {
-      list.innerHTML = `<li><entry><div class="row1">Pathrise</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>
-      <li><entry><div class="row1">Google</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>
-      <li><entry><div class="row1">Facebook</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>
-      <li><entry><div class="row1">Airbnb</div><div class="xBtn row1"> x </div><div>Software Engineer</div></entry></li>`;
+      list.innerHTML = `<li><entry><img src="https://logo.clearbit.com/pathrise.com" class=logo><div class="row1">Pathrise</div><div class="xBtn row1"> x </div><div></div><div>Software Engineer</div></entry></li>
+      <li><entry><img src="https://logo.clearbit.com/google.com" class=logo><div class="row1">Google</div><div class="xBtn row1"> x </div><div></div><div>Software Engineer</div></entry></li>
+      <li><entry><img src="https://logo.clearbit.com/facebook.com" class=logo><div class="row1">Facebook</div><div class="xBtn row1"> x </div><div></div><div>Software Engineer</div></entry></li>
+      <li><entry><img src="https://logo.clearbit.com/Airbnb.com" class=logo><div class="row1">Airbnb</div><div class="xBtn row1"> x </div><div></div><div>Software Engineer</div></entry></li>`;
     }
     else {
       list.innerHTML = storedValues;
